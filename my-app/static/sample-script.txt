@@ -1,0 +1,41 @@
+{
+  "name": "3139822725265473042",
+  "metadata": {
+    "@type": "type.googleapis.com/google.cloud.speech.v1.LongRunningRecognizeMetadata",
+    "progressPercent": 100,
+    "startTime": "2018-01-30T01:23:10.325709Z",
+    "lastUpdateTime": "2018-01-30T01:23:45.572155Z"
+  },
+  "done": true,
+  "response": {
+    "@type": "type.googleapis.com/google.cloud.speech.v1.LongRunningRecognizeResponse",
+    "results": [
+      {
+        "alternatives": [
+          {
+            "transcript": "역사의 주관자가 되시는 살아계신 하나님 아버지",
+            "confidence": 0.75177974
+          }
+        ]
+      },
+      {
+        "alternatives": [
+          {
+            "transcript": " 기쁜 밤이 지나가면 찬란한 아침이 오고 또 이렇게 축구 삭막한 겨울이 지나가면 따뜻한 봄이 오듯이 우리 인생에도 반드시 봄으로 오게 하시는 하나님을 송축합니다 다양한 인생 현장 현장마다 눈물이 고통이 있습니다 좌절 있고 낚시도 있습니다 그러나 살아계신 하나님을 온전히 의지하기 매 순간순간마다 오직 하나님께서 소망과 승리의 삶을 살아가는 저희들이 되도록 도와 주옵소서 2시간 도살하는 동역자들이 전 마무리 예배합니다 또한 예배하며 하나님의 귀한 좀 올려 드립니다들이 손길마다 금액을 가득 베풀어 주옵소서 하나님께서 그 모든 삶의 시켜 주시고 제가 한 손으로도 오셔서 매순간 매순간마다 하나님 은혜 안에서",
+            "confidence": 0.90287936
+          }
+        ]
+      },
+      {
+        "alternatives": [
+          {
+            "transcript": " 삶을 살아가도록 인도해 주옵소서",
+            "confidence": 0.93219864
+          }
+        ]
+      }
+    ],
+    "totalBilledTime": "75s",
+    "s3Condition": "longform"
+  }
+}

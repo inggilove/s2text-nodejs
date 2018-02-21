@@ -1,0 +1,24 @@
+{
+  "name": "my-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "inggilove",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/speech": "^1.1.0",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "forever": "^0.15.3",
+    "moment": "^2.20.1",
+    "mongoose": "^5.0.2",
+    "nodemon": "^1.14.11",
+    "swagger-tools": "^0.10.3",
+    "swagger-ui": "^3.10.0",
+    "yamljs": "^0.3.0"
+  }
+}

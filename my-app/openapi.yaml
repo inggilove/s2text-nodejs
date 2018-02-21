@@ -1,0 +1,117 @@
+# [START swagger]
+swagger: "2.0"
+info:
+  description: "Speech-to-Text API based on Google Speech API"
+  title: "Transcription API"
+  version: "1.0.0"
+host: "35.200.40.38:3000"
+# [END swagger]
+basePath: "/"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+schemes:
+- "http"
+paths:
+  "/api/showall":
+    get:
+      description: "Returns All scripts 모든 스크립트의 요약정보를 조회합니다."
+      operationId: "list_all_scripts"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "All Script info."
+          schema:
+            $ref: "#/definitions/scriptList"
+  "/api/show/{title}":
+    get:
+      description: "Return single script information. 하나의 스크립트를 상세히 조회합니다."
+      operationId: "list_a_script"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "title"
+        in: "path"
+        description: "Script Title"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Script info."
+          schema:
+            $ref: "#/definitions/script"
+  "/api/sample":
+    get:
+      description: "Return Sample"
+      operationId: "list_sample_script"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "Sample"
+          schema:
+            $ref: "#/definitions/message"
+definitions:
+  message:
+    properties:
+      message:
+        type: "string"
+  scriptList:
+    properties:
+      response:
+        type: "string"
+      msg:
+        type: "string"
+      data:
+        type: "string"
+  script:
+    properties:
+      title:
+        type: "string"
+      date_created:
+        type: "string"
+      elapsed:
+        type: "string"
+      script:
+        type: "string"
+  paramScript:
+    properties:
+      title:
+        type: "string"
+# This section requires all requests to any path to require an API key.
+security:
+- api_key: []
+securityDefinitions:
+  # This section configures basic authentication with an API key.
+  api_key:
+    type: "apiKey"
+    name: "key"
+    in: "query"
+  # This section configures authentication using Google API Service Accounts
+  # to sign a json web token. This is mostly used for server-to-server
+  # communication.
+  google_jwt:
+    authorizationUrl: ""
+    flow: "implicit"
+    type: "oauth2"
+    # This must match the 'iss' field in the JWT.
+    x-google-issuer: "jwt-client.endpoints.sample.google.com"
+    # Update this with your service account's email address.
+    x-google-jwks_uri: "https://www.googleapis.com/service_accounts/v1/jwk/YOUR-SERVICE-ACCOUNT-EMAIL"
+    # This must match the "aud" field in the JWT. You can add multiple
+    # audiences to accept JWTs from multiple clients.
+    x-google-audiences: "echo.endpoints.sample.google.com"
+  # This section configures authentication using Google OAuth2 ID Tokens.
+  # ID Tokens can be obtained using OAuth2 clients, and can be used to access
+  # your API on behalf of a particular user.
+  google_id_token:
+    authorizationUrl: ""
+    flow: "implicit"
+    type: "oauth2"
+    x-google-issuer: "https://accounts.google.com"
+    x-google-jwks_uri: "https://www.googleapis.com/oauth2/v3/certs"
+    # Your OAuth2 client's Client ID must be added here. You can add
+    # multiple client IDs to accept tokens from multiple clients.
+    x-google-audiences: "YOUR-CLIENT-ID"
