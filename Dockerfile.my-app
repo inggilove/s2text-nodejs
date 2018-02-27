@@ -7,7 +7,7 @@ WORKDIR /app-data/my-app
 
 # 앱 소스 추가
 ADD ./my-app /app-data/my-app
-ADD /var/jenkins_home/secrets/GraceChurch-Home-b11a25cab0ba.json /app-data
+ADD ../GraceChurch-Home-b11a25cab0ba.json /app-data
 
 # Google Speech API
 ENV GOOGLE_APPLICATION_CREDENTIALS /app-data/GraceChurch-Home-b11a25cab0ba.json
