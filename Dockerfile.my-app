@@ -7,10 +7,9 @@ WORKDIR /app-data/my-app
 
 # 앱 소스 추가
 ADD ./my-app /app-data/my-app
-ADD ./GraceChurch-Home-b11a25cab0ba.json /app-data
 
 # Google Speech API
-ENV GOOGLE_APPLICATION_CREDENTIALS /app-data/GraceChurch-Home-b11a25cab0ba.json
+ENV GOOGLE_APPLICATION_CREDENTIALS /app-data/my-app/secrets/GraceChurch-Home-b11a25cab0ba.json
 
 # 앱 의존성 설치
 RUN npm install
