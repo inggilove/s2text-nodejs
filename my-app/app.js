@@ -30,7 +30,7 @@ db.once('open', function(){
     console.log("Connected to mongod server");
 });
 
-mongoose.connect('mongodb://172.17.0.6:27017/myAudio');
+mongoose.connect('mongodb://localhost:27017/myAudio');
 
 swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
 	// Serve the Swagger documents and Swagger UI
