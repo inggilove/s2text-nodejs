@@ -46,7 +46,11 @@ var List = Vue.extend({
       	return product.title.indexOf(this.searchKey) > -1
         //return !product.name.indexOf(this.searchKey)
       })
+    },
+    sortedArray() {
+      return this.arrays.sort((a, b) => a.name > b.name );
     }
+    return this.arrays.sort(compare);
   }
 });
 
