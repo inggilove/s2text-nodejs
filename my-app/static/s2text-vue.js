@@ -48,9 +48,8 @@ var List = Vue.extend({
       })
     },
     sortedArray() {
-      return this.arrays.sort((a, b) => a.name > b.name );
+      return this.arrays.sort((a, b) => a.name < b.name );
     }
-    return this.arrays.sort(compare);
   }
 });
 
