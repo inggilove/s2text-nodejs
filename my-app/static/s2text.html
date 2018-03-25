@@ -38,12 +38,17 @@
 </template>
 
 <template id="product-list"><div>
+  <div class="actions">
+    <a class="btn btn-warning" >
+	    <router-link :to="{name: 'product-add'}"> 추가하기 </router-link>
+    </a>
+  </div>
   <div class="filters row">
     <div class="input-group mb-1">
-	<input type="text" class="form-control" placeholder="" v-model="searchKey" id="sarch-element" required >
 	<div class="input-group-append">
 	<button class="btn btn-secondary" type="button">제목으로 찾기</button>
-	</div>
+	<input type="text" class="form-control" placeholder="" v-model="searchKey" id="sarch-element" required >		
+	</div>	    
     </div>
   </div>
   <table class="table table-striped table-sm">
@@ -74,11 +79,7 @@
     </tr>
     </tbody>
   </table>
-  <div class="actions">
-    <a class="btn btn-warning" >
-	    <router-link :to="{name: 'product-add'}"> 추가하기 </router-link>
-    </a>
-  </div>
+
 </div>
 </template>
 
