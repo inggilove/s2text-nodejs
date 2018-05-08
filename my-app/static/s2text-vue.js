@@ -46,6 +46,7 @@ var List = Vue.extend({
       	return product.title.indexOf(this.searchKey) > -1
         //return !product.name.indexOf(this.searchKey)
       })
+      .sort((a,b) => a.date_created > b.date_created)
     },
     sortedArray() {
       return this.arrays.sort((a, b) => a.name < b.name );
