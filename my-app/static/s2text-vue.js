@@ -45,11 +45,11 @@ var List = Vue.extend({
       return this.products.filter( (product) => {
       	return product.title.indexOf(this.searchKey) > -1
         //return !product.name.indexOf(this.searchKey)
-      }).sort((a,b) => { return a.name > b.name })
+      }).sort((a,b) => { return a.name < b.name })
       
     },
     sortedArray() {
-      return this.products.sort((a,b) => { return new Date(a.date_created) > new Date(b.date_created) })
+      return this.products.sort((a,b) => { return a.date_created < b.date_created })
     }
   }
 });
